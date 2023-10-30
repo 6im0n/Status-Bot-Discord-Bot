@@ -1,8 +1,8 @@
 # Website Uptime Discord Bot
 
-![GitHub](https://img.shields.io/github/license/6im0n/Status-Bot-Discord-Bot/)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/6im0n/Status-Bot-Discord-Bot/)
-![GitHub last commit](https://img.shields.io/github/last-commit/6im0n/Status-Bot-Discord-Bot/)
+![GitHub](https://img.shields.io/github/license/6im0n/Status-Bot-Discord-Bot)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/6im0n/Status-Bot-Discord-Bot)
+![GitHub last commit](https://img.shields.io/github/last-commit/6im0n/Status-Bot-Discord-Bot)
 
 A Discord bot that monitors the uptime of websites and sends notifications when they go down or when they become operational again. You can configure the channel to receive notifications, specify the websites to monitor, and customize the messages sent when the server goes down and when it comes back up.
 
