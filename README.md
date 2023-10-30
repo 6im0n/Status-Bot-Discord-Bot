@@ -13,9 +13,7 @@ A Discord bot that monitors the uptime of websites and sends notifications when 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Configuration](#configuration)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -50,7 +48,7 @@ npm install
 
 3. Create a Discord Bot and get your bot token. You can follow the official Discord Developer Portal to create a new bot.
 
-https://discord.com/developers/applications
+   https://discord.com/developers/applications
 
 4. Create a Discord Bot and get your bot token. You can follow the official Discord Developer Portal to create a new bot.
 Create a .env file in the project directory with the following content:
@@ -67,12 +65,12 @@ node bot.js
 ```
 The bot should now be up and running, monitoring the specified website and sending notifications to the configured Discord channel.
 
-##Usage
+### Usage
 
 Once the bot is running, it will automatically check the specified websites for uptime. You can interact with the bot using Discord commands to configure settings, check the current status, and more.
 (feature will come soon)
 
-##Contributing
+### Contributing
 
 If you would like to contribute to this project, feel free to submit a pull request with your changes or open an issue for any suggestions or bug reports.
 
