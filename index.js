@@ -36,7 +36,7 @@ const serverUPEmbeded = new EmbedBuilder()
 
 async function pingServer(url) {
   try {
-    const response = await axios.get(url, { timeout: 800 });
+    const response = await axios.get(url, { timeout: 1500 });
    // const attachment = new MessageAttachment('https://media.giphy.com/media/WpaVhEcp3Qo2TjwyI1/giphy.gif');
     if (response.status === 200) {
       if (isDown) {
