@@ -22,29 +22,16 @@ const serverDownEmbeded = new EmbedBuilder()
 	.setTitle('Le serveur à arrêté de fonctionner 🤯')
 	.setAuthor({ name: 'Serveur non disponible', iconURL: 'https://github.com/jellyfin/jellyfin-ux/blob/master/branding/tizen/icon.png?raw=true', url: 'https://discord.js.org' })
 	.setThumbnail('https://github.com/jellyfin/jellyfin-ux/blob/master/branding/tizen/icon.png?raw=true')
-	// .addFields(
-	// 	{ name: 'Regular field title', value: 'Some value here' },
-	// 	{ name: '\u200B', value: '\u200B' },
-	// 	{ name: 'Inline field title', value: 'Some value here', inline: true },
-	// 	{ name: 'Inline field title', value: 'Some value here', inline: true },
-	// )
 	.setImage('https://media.giphy.com/media/WpaVhEcp3Qo2TjwyI1/giphy.gif')
 	.setTimestamp()
 
-  const serverUPEmbeded = new EmbedBuilder()
+const serverUPEmbeded = new EmbedBuilder()
 	.setColor(0x0099FF)
 	.setTitle('Le serveur fonctionne de nouveau ✨')
 	.setAuthor({ name: 'Serveur actif !', iconURL: 'https://github.com/jellyfin/jellyfin-ux/blob/master/branding/tizen/icon.png?raw=true', url: 'https://discord.js.org' })
 	.setThumbnail('https://github.com/jellyfin/jellyfin-ux/blob/master/branding/tizen/icon.png?raw=true')
-	// .addFields(
-	// 	{ name: 'Regular field title', value: 'Some value here' },
-	// 	{ name: '\u200B', value: '\u200B' },
-	// 	{ name: 'Inline field title', value: 'Some value here', inline: true },
-	// 	{ name: 'Inline field title', value: 'Some value here', inline: true },
-	// )
 	.setImage('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGwyYm51aG84NWhqNHgzZjBxcGw3dnpub3owbm1wNTE1ODFoODkzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8nmb8m82jbLfa/giphy.gif')
 	.setTimestamp()
-
 
 
 async function pingServer(url) {
