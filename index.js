@@ -2,7 +2,7 @@ require("dotenv").config();
 const axios = require('axios');
 const { Client, GatewayIntentBits, Partials, EmbedBuilder  } = require('discord.js');
 
-const channel_status_id = process.env.CHANEL_ID;
+const channel_status_id = process.env.CHANNEL_ID;
 const serverUrl = process.env.URL_TO_PING;
 let isDown = true;
 
