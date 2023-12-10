@@ -23,7 +23,7 @@ const serverDownEmbeded = new EmbedBuilder()
 	.setAuthor({ name: 'Serveur non disponible', iconURL: 'https://github.com/jellyfin/jellyfin-ux/blob/master/branding/tizen/icon.png?raw=true', url: 'https://discord.js.org' })
 	.setThumbnail('https://github.com/jellyfin/jellyfin-ux/blob/master/branding/tizen/icon.png?raw=true')
 	.setImage('https://media.giphy.com/media/WpaVhEcp3Qo2TjwyI1/giphy.gif')
-	.setTimestamp()
+	// .setTimestamp(Date.now())
 
 const serverUPEmbeded = new EmbedBuilder()
 	.setColor(0x0099FF)
@@ -31,17 +31,17 @@ const serverUPEmbeded = new EmbedBuilder()
 	.setAuthor({ name: 'Serveur actif !', iconURL: 'https://github.com/jellyfin/jellyfin-ux/blob/master/branding/tizen/icon.png?raw=true', url: 'https://discord.js.org' })
 	.setThumbnail('https://github.com/jellyfin/jellyfin-ux/blob/master/branding/tizen/icon.png?raw=true')
 	.setImage('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGwyYm51aG84NWhqNHgzZjBxcGw3dnpub3owbm1wNTE1ODFoODkzZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8nmb8m82jbLfa/giphy.gif')
-	.setTimestamp()
+	// .setTimestamp(Date.now())
 
 
 async function pingServer(url) {
   try {
-    const response = await axios.get(url, { timeout: 1500 });
-   // const attachment = new MessageAttachment('https://media.giphy.com/media/WpaVhEcp3Qo2TjwyI1/giphy.gif');
+    const response = await axios.get(url, { timeout: 1200 });
     if (response.status === 200) {
       if (isDown) {
         console.log(`Server at ${url} is up and running.`);
         client.channels.cache.get(channel_status_id).send({embeds: [serverUPEmbeded]});
+        client.user.setPresence({status: 'online', activities: [{name: 'Streaming is Online 🟢'}]});
       }
       isDown = false;
 
@@ -49,6 +49,7 @@ async function pingServer(url) {
       if (!isDown) {
         console.log(`Server at ${url} returned an unexpected status code: ${response.status}`);
         client.channels.cache.get(channel_status_id).send({embeds: [serverDownEmbeded]});
+        client.user.setPresence({status: 'dnd', activities: [{name: 'Streaming is offline 🔴'}]});
       }
       isDown = true;
     }
@@ -56,6 +57,7 @@ async function pingServer(url) {
     if (!isDown) {
       console.log(`Server at ${url} is down or unreachable. Error: ${error.message}`);
       client.channels.cache.get(channel_status_id).send({embeds: [serverDownEmbeded]});
+      client.user.setPresence({status: 'dnd', activities: [{name: 'Streaming is offline 🔴'}]});
       isDown = true;
     }
   }
@@ -63,7 +65,7 @@ async function pingServer(url) {
 
 client.on("ready", () => {
   console.log("I am ready!");
-  client.user.setPresence({status: 'online', activities: [{name: 'To ping server'}]});
+  client.user.setPresence({status: 'online', activities: [{name: 'To ping server 🟢'}]});
   pingServer(serverUrl);
 });
 
