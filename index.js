@@ -74,8 +74,27 @@ setInterval(() => {
 }, 35000);
 
 client.on("messageCreate", (message) => {
-  if (message.content.startsWith("help")) {
-    message.channel.send("en cours de dev");
+  if (message.content.startsWith("ping")) {
+    // Record the start time
+    const startTime = new Date().getTime();
+    try {
+      // Make Axios request
+      const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
+
+      // Record the end time
+      const endTime = new Date().getTime();
+
+      // Calculate the time taken
+      const timeTaken = endTime - startTime;
+
+      // Log the response and time taken
+      console.log('Axios Response:', response.data);
+      console.log('Time Taken:', timeTaken, 'milliseconds');
+      message.channel.send("Le serveur à repondu en: ", timeTaken);
+    } catch (error) {
+      // Handle errors
+       message.channel.send('Axios Request Failed:', error);
+    }
   }
 });
 
