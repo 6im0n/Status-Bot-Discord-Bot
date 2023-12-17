@@ -78,7 +78,7 @@ async function makeAxiosRequest(message) {
     const startTime = new Date().getTime();
     try {
       // Make Axios request
-      const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
+      const response = await axios.get(serverUrl);
 
       // Record the end time
       const endTime = new Date().getTime();
