@@ -73,8 +73,7 @@ setInterval(() => {
   pingServer(serverUrl);
 }, 35000);
 
-client.on("messageCreate", (message) => {
-  if (message.content.startsWith("ping")) {
+async function makeAxiosRequest() {
     // Record the start time
     const startTime = new Date().getTime();
     try {
@@ -95,7 +94,12 @@ client.on("messageCreate", (message) => {
       // Handle errors
        message.channel.send('Axios Request Failed:', error);
     }
-  }
+}
+
+client.on("messageCreate", (message) => {
+	if (message.content.startsWith("ping")) {
+		makeAxiosRequest()
+	}
 });
 
 
