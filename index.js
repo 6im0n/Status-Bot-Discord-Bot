@@ -89,7 +89,7 @@ async function makeAxiosRequest(message) {
       // Log the response and time taken
       console.log('Axios Response:', response.data);
       console.log('Time Taken:', timeTaken, 'milliseconds');
-      message.channel.send("Le serveur à repondu en: ${timeTaken}");
+      message.channel.send(`Le serveur à repondu en: ${timeTaken}`);
     } catch (error) {
       // Handle errors
        message.channel.send('Axios Request Failed:', error);
