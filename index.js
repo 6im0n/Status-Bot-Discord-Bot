@@ -71,7 +71,7 @@ client.on("ready", () => {
 
 setInterval(() => {
   pingServer(serverUrl);
-}, 120000);
+}, 35000);
 
 client.on("messageCreate", (message) => {
   if (message.content.startsWith("help")) {
