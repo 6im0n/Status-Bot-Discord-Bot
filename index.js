@@ -36,7 +36,7 @@ const serverUPEmbeded = new EmbedBuilder()
 
 async function pingServer(url) {
   try {
-    const response = await axios.get(url, { timeout: 4500 });
+    const response = await axios.get(url, { timeout: 10000 });
     if (response.status === 200) {
       if (isDown) {
         console.log(`Server at ${url} is up and running.`);
